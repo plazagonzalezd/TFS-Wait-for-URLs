@@ -1,0 +1,44 @@
+{
+    "id": "4DC9189D-11B7-46AD-B2F0-58D866350445",
+    "name": "WaitForUrls",
+    "friendlyName": "Wait for Urls",
+    "description": "This task is used to verify that a given list of sites are up and running.",
+    "helpMarkDown": "[More Information](http://tfs:8080/tfs)",
+    "category": "Utility",
+    "visibility": [
+      "Build",
+      "Release"
+    ],
+    "author": "Alex Plaza",
+    "version": {
+        "Major": 1,
+        "Minor": 0,
+        "Patch": 0
+    },
+    "inputs": [
+        {
+            "name": "urls",
+            "type": "string",
+            "label": "URLs",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "Provide a comma separated list of URLs"
+        },
+        {
+                "name": "WaitTimeoutInMinutes",
+                "type": "string",
+                "label": "Wait timeout",
+                "defaultValue": "3",
+                "required": true,
+                "helpMarkDown": "Amount of time in minutes to wait for the url"
+            }
+    ],
+    "instanceNameFormat": "Waiting for URLs: $(urls)...",
+    "execution": {
+        "PowerShell3": {
+          "target": "$(currentDirectory)\\scripts\\WaitforUrls.ps1",
+          "argumentFormat": "",
+          "workingDirectory": "$(currentDirectory)"
+        }
+    }
+}
