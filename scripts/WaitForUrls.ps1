@@ -1,6 +1,5 @@
-﻿function Wait-Urls
-{
-    param(
+[cmdletbinding()]
+param(
         [string]$urls,
         [int]$timeoutMinutes
     )
@@ -26,4 +25,3 @@
     if($urlList.Count -ne 0) {
     $urlList | % {Write-Host "Time-Out. Could not get a response from $_"}
     }
-}
