@@ -33,10 +33,10 @@
                 "helpMarkDown": "Amount of time in minutes to wait for the url"
             }
     ],
-    "instanceNameFormat": "Waiting for URLs: $(urls)...",
+    "instanceNameFormat": "Wait for URLs: $(urls)",
     "execution": {
-        "PowerShell3": {
-          "target": "$(currentDirectory)\\scripts\\WaitforUrls.ps1",
+        "PowerShell": {
+          "target": "$(currentDirectory)\\WaitforUrls.ps1",
           "argumentFormat": "",
           "workingDirectory": "$(currentDirectory)"
         }

@@ -14,22 +14,16 @@
         "Build and release"
     ],
     "icons": {
-        "default": "images/WaitForUrls-icon.png"
+        "default": "extension-icon.png"
     },
     "files": [
         {
             "path": "buildtask", "addressable": true
-        },
-        {
-            "path": "scripts", "addressable": true
-        },
-        {
-            "path": "images/WaitForUrls-icon.png", "addressable": true
         }
     ],
     "contributions": [
        {
-           "id": "custom-build-task",
+           "id": "build-task",
            "type": "ms.vss-distributed-task.task",
            "targets": [
                "ms.vss-distributed-task.tasks"
