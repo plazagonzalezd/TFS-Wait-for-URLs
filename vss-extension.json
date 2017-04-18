@@ -1,36 +1,42 @@
 {
     "manifestVersion": 1,
-    "id": "build-task",
-    "name": "Fabrikam Build Tools",
-    "version": "0.0.1",
-    "publisher": "fabrikam",
+    "id": "WaitForUrls",
+    "name": "Wait for URLs",
+    "version": "1.0.0",
+    "publisher": "alexplaza",
     "targets": [
         {
             "id": "Microsoft.VisualStudio.Services"
         }
     ],
-    "description": "Tools for building with Fabrikam. Includes one build task.",
+    "description": "This task is used to verify that a given list of sites are up and running.",
     "categories": [
         "Build and release"
     ],
     "icons": {
-        "default": "images/extension-icon.png"
+        "default": "images/WaitForUrls-icon.png"
     },
     "files": [
         {
-            "path": "buildtask"
+            "path": "buildtask", "addressable": true
+        },
+        {
+            "path": "scripts", "addressable": true
+        },
+        {
+            "path": "images/WaitForUrls-icon.png", "addressable": true
         }
     ],
     "contributions": [
-        {
-            "id": "custom-build-task",
-            "type": "ms.vss-distributed-task.task",
-            "targets": [
-                "ms.vss-distributed-task.tasks"
-            ],
-            "properties": {
-                "name": "buildtask"
-            }
-        }
-    ]
+       {
+           "id": "custom-build-task",
+           "type": "ms.vss-distributed-task.task",
+           "targets": [
+               "ms.vss-distributed-task.tasks"
+           ],
+           "properties": {
+               "name": "buildtask"
+           }
+       }
+   ]
 }

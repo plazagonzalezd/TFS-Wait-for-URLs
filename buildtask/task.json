@@ -3,7 +3,7 @@
     "name": "WaitForUrls",
     "friendlyName": "Wait for Urls",
     "description": "This task is used to verify that a given list of sites are up and running.",
-    "helpMarkDown": "[More Information](http://tfs:8080/tfs)",
+    "helpMarkDown": "[More Information](https://github.com/plazagonzalezd/TFS-Wait-for-URLs)",
     "category": "Utility",
     "visibility": [
       "Build",
@@ -25,7 +25,7 @@
             "helpMarkDown": "Provide a comma separated list of URLs"
         },
         {
-                "name": "WaitTimeoutInMinutes",
+                "name": "timeoutMinutes",
                 "type": "string",
                 "label": "Wait timeout",
                 "defaultValue": "3",
