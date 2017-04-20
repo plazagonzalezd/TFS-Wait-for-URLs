@@ -1,7 +1,7 @@
 {
     "id": "4DC9189D-11B7-46AD-B2F0-58D866350445",
-    "name": "WaitForUrls",
-    "friendlyName": "Wait for Urls",
+    "name": "waitTask",
+    "friendlyName": "Wait for URLs",
     "description": "This task is used to verify that a given list of sites are up and running.",
     "helpMarkDown": "[More Information](https://github.com/plazagonzalezd/TFS-Wait-for-URLs)",
     "category": "Utility",
@@ -13,11 +13,11 @@
     "version": {
         "Major": 1,
         "Minor": 0,
-        "Patch": 0
+        "Patch": 1
     },
     "inputs": [
         {
-            "name": "urls",
+            "name": "Urls",
             "type": "string",
             "label": "URLs",
             "defaultValue": "",
@@ -25,18 +25,18 @@
             "helpMarkDown": "Provide a comma separated list of URLs"
         },
         {
-                "name": "timeoutMinutes",
+                "name": "Seconds",
                 "type": "string",
                 "label": "Wait timeout",
-                "defaultValue": "3",
+                "defaultValue": "270",
                 "required": true,
-                "helpMarkDown": "Amount of time in minutes to wait for the url"
+                "helpMarkDown": "Amount of time in seconds to wait for a HTTP response"
             }
     ],
     "instanceNameFormat": "Wait for URLs: $(urls)",
     "execution": {
         "PowerShell": {
-          "target": "$(currentDirectory)\\WaitforUrls.ps1",
+          "target": "$(currentDirectory)\\waitTask.ps1",
           "argumentFormat": "",
           "workingDirectory": "$(currentDirectory)"
         }

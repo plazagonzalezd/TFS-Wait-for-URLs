@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "WaitForUrls",
     "name": "Wait for URLs",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "publisher": "alexplaza",
     "targets": [
         {
@@ -18,18 +18,18 @@
     },
     "files": [
         {
-            "path": "buildtask", "addressable": true
+            "path": "waitTask", "addressable": true
         }
     ],
     "contributions": [
        {
-           "id": "build-task",
+           "id": "wait-task",
            "type": "ms.vss-distributed-task.task",
            "targets": [
                "ms.vss-distributed-task.tasks"
            ],
            "properties": {
-               "name": "buildtask"
+               "name": "waitTask"
            }
        }
    ]
