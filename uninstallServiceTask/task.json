@@ -1,0 +1,76 @@
+{
+    "id": "59E715D5-EA4A-4607-8602-E74163BF67ED",
+    "name": "uninstallServiceTask",
+    "friendlyName": "Uninstall Windows Service",
+    "description": "This task will uninstall a windows service.",
+    "helpMarkDown": "[More Information](https://github.com/plazagonzalezd/TFS-Wait-for-URLs)",
+    "category": "Utility",
+    "visibility": [
+      "Build",
+      "Release"
+    ],
+    "author": "Alex Plaza",
+    "version": {
+        "Major": 1,
+        "Minor": 2,
+        "Patch": 0
+    },
+    "groups": [
+      {
+          "name": "windowsServiceOptions",
+          "displayName": "Windows Serivce Options",
+          "isExpanded": true
+      },
+      {
+        "name": "remoteOptions",
+        "displayName": "Remote Options",
+        "isExpanded": true
+      }
+    ],
+    "inputs": [
+        {
+            "name": "serviceName",
+            "type": "string",
+            "label": "Name",
+            "defaultValue": "",
+            "required": true,
+            "groupName": "windowsServiceOptions",
+            "helpMarkDown": "Name of new windows service"
+        },
+        {
+                "name": "computerName",
+                "type": "string",
+                "label": "Machines",
+                "defaultValue": "",
+                "required": true,
+                "groupName": "remoteOptions",
+                "helpMarkDown": "Provide a comma separated list of machine FQDNs where the service will be created"
+        },
+        {
+                "name": "adminLogin",
+                "type": "string",
+                "label": "Admin Login",
+                "defaultValue": "",
+                "required": true,
+                "groupName": "remoteOptions",
+                "helpMarkDown": "Administrator Login for target machines"
+        },
+        {
+                "name": "adminPass",
+                "type": "string",
+                "label": "Password",
+                "defaultValue": "",
+                "required": true,
+                "groupName": "remoteOptions",
+                "helpMarkDown": "Password for administrator Login on target machines"
+        }
+    ],
+    "instanceNameFormat": "Uninstall Windows Service",
+    "execution": {
+        "PowerShell": {
+          "target": "$(currentDirectory)\\uninstallServiceTask.ps1",
+          "argumentFormat": "",
+          "workingDirectory": "$(currentDirectory)"
+        }
+    }
+}

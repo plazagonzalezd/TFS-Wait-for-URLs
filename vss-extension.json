@@ -1,15 +1,15 @@
 {
     "manifestVersion": 1,
-    "id": "WaitForUrls",
-    "name": "Wait for URLs",
-    "version": "1.0.1",
+    "id": "windowServicesTools",
+    "name": "Windows Services Tools",
+    "version": "1.2.0",
     "publisher": "alexplaza",
     "targets": [
         {
             "id": "Microsoft.VisualStudio.Services"
         }
     ],
-    "description": "This task is used to verify that a given list of sites are up and running.",
+    "description": "This extension includes tasks to help your manage you windows services during deployments.",
     "categories": [
         "Build and release"
     ],
@@ -19,6 +19,12 @@
     "files": [
         {
             "path": "waitTask", "addressable": true
+        },
+        {
+            "path": "uninstallServiceTask", "addressable": true
+        },
+        {
+            "path": "createServiceTask", "addressable": true
         }
     ],
     "contributions": [
@@ -30,6 +36,26 @@
            ],
            "properties": {
                "name": "waitTask"
+           }
+       },
+       {
+          "id": "uninstall-service-task",
+          "type": "ms.vss-distributed-task.task",
+          "targets": [
+              "ms.vss-distributed-task.tasks"
+          ],
+          "properties": {
+              "name": "uninstallServiceTask"
+         }
+       },
+       {
+           "id": "create-service-task",
+           "type": "ms.vss-distributed-task.task",
+           "targets": [
+               "ms.vss-distributed-task.tasks"
+           ],
+           "properties": {
+               "name": "createServiceTask"
            }
        }
    ]
