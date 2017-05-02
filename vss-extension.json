@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "windowServicesTools",
     "name": "Windows Services Tools",
-    "version": "1.2.0",
+    "version": "1.3.3",
     "publisher": "alexplaza",
     "targets": [
         {
@@ -25,6 +25,12 @@
         },
         {
             "path": "createServiceTask", "addressable": true
+        },
+        {
+            "path": "installNServiceBusTask", "addressable": true
+        },
+        {
+            "path": "uninstallNServiceBusTask", "addressable": true
         }
     ],
     "contributions": [
@@ -56,6 +62,26 @@
            ],
            "properties": {
                "name": "createServiceTask"
+           }
+       },
+       {
+           "id": "install-nservicebus-task",
+           "type": "ms.vss-distributed-task.task",
+           "targets": [
+               "ms.vss-distributed-task.tasks"
+           ],
+           "properties": {
+               "name": "installNServiceBusTask"
+           }
+       },
+       {
+           "id": "uninstall-nservicebus-task",
+           "type": "ms.vss-distributed-task.task",
+           "targets": [
+               "ms.vss-distributed-task.tasks"
+           ],
+           "properties": {
+               "name": "uninstallNServiceBusTask"
            }
        }
    ]

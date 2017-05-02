@@ -1,8 +1,8 @@
 {
-    "id": "03BF2FB5-CBE5-4181-9688-4A5790313BBC",
-    "name": "createServiceTask",
-    "friendlyName": "Create Windows Service",
-    "description": "This task is will create a windows service.",
+    "id": "1542A282-DF63-4D00-9AAE-C31F3A121D5E",
+    "name": "installNServiceBusTask",
+    "friendlyName": "Install NServiceBus Application",
+    "description": "This task is will install a NServiceBus application as a windows service.",
     "helpMarkDown": "[More Information](https://github.com/plazagonzalezd/TFS-Wait-for-URLs)",
     "category": "Utility",
     "visibility": [
@@ -12,8 +12,8 @@
     "author": "Alex Plaza",
     "version": {
         "Major": 1,
-        "Minor": 2,
-        "Patch": 4
+        "Minor": 0,
+        "Patch": 2
     },
     "groups": [
       {
@@ -65,37 +65,6 @@
                 "helpMarkDown": "Password of windows service account"
         },
         {
-                "name": "displayName",
-                "type": "string",
-                "label": "Display Name",
-                "defaultValue": "",
-                "required": false,
-                "groupName": "windowsServiceOptions",
-                "helpMarkDown": "Display name of the windows service"
-        },
-        {
-                "name": "description",
-                "type": "multiLine",
-                "label": "Description",
-                "defaultValue": "",
-                "required": false,
-                "groupName": "windowsServiceOptions",
-                "helpMarkDown": "Description of windows service"
-        },
-        {
-                "name": "startUp",
-                "type": "radio",
-                "label": "StartUp Type",
-                "defaultValue": "Automatic",
-                "options": {
-                  "Manual": "Manual",
-                  "Automatic": "Automatic"
-                },
-                "required": false,
-                "groupName": "windowsServiceOptions",
-                "helpMarkDown": "Windows Service StartUp Type"
-        },
-        {
                 "name": "computerName",
                 "type": "string",
                 "label": "Machines",
@@ -123,10 +92,10 @@
                 "helpMarkDown": "Password for administrator Login on target machines"
         }
     ],
-    "instanceNameFormat": "Create Windows Service",
+    "instanceNameFormat": "Install NServiceBus Application",
     "execution": {
         "PowerShell": {
-          "target": "$(currentDirectory)\\createServiceTask.ps1",
+          "target": "$(currentDirectory)\\installNServiceBus.ps1",
           "argumentFormat": "",
           "workingDirectory": "$(currentDirectory)"
         }

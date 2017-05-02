@@ -7,7 +7,8 @@ param(
     [string]$adminPass
     )
 Import-Module .\uninstallServiceTaskFunctions.psm1
-$creds = New-Object System.Management.Automation.PSCredential ($adminLogin, $adminPass)
+$securePassword = ConvertTo-SecureString $adminPass -AsPlainText -Force
+$creds = New-Object System.Management.Automation.PSCredential ($adminLogin, $securePassword)
 
 Invoke-Command -Credential $creds `
                -ComputerName $computerName `

@@ -1,8 +1,8 @@
 {
-    "id": "03BF2FB5-CBE5-4181-9688-4A5790313BBC",
-    "name": "createServiceTask",
-    "friendlyName": "Create Windows Service",
-    "description": "This task is will create a windows service.",
+    "id": "406D5DF3-5572-4F86-A483-F15C222FFB1E",
+    "name": "uninstallNServiceBusTask",
+    "friendlyName": "Uninstall NServiceBus Application",
+    "description": "This task is will uninstall a NServiceBus application.",
     "helpMarkDown": "[More Information](https://github.com/plazagonzalezd/TFS-Wait-for-URLs)",
     "category": "Utility",
     "visibility": [
@@ -12,8 +12,8 @@
     "author": "Alex Plaza",
     "version": {
         "Major": 1,
-        "Minor": 2,
-        "Patch": 4
+        "Minor": 0,
+        "Patch": 3
     },
     "groups": [
       {
@@ -47,55 +47,6 @@
                 "helpMarkDown": "Path to executable file for the service"
         },
         {
-                "name": "username",
-                "type": "string",
-                "label": "Windows Service Account",
-                "defaultValue": "",
-                "required": false,
-                "groupName": "windowsServiceOptions",
-                "helpMarkDown": "Account that will run the windows service"
-        },
-        {
-                "name": "password",
-                "type": "string",
-                "label": "Password",
-                "defaultValue": "",
-                "required": false,
-                "groupName": "windowsServiceOptions",
-                "helpMarkDown": "Password of windows service account"
-        },
-        {
-                "name": "displayName",
-                "type": "string",
-                "label": "Display Name",
-                "defaultValue": "",
-                "required": false,
-                "groupName": "windowsServiceOptions",
-                "helpMarkDown": "Display name of the windows service"
-        },
-        {
-                "name": "description",
-                "type": "multiLine",
-                "label": "Description",
-                "defaultValue": "",
-                "required": false,
-                "groupName": "windowsServiceOptions",
-                "helpMarkDown": "Description of windows service"
-        },
-        {
-                "name": "startUp",
-                "type": "radio",
-                "label": "StartUp Type",
-                "defaultValue": "Automatic",
-                "options": {
-                  "Manual": "Manual",
-                  "Automatic": "Automatic"
-                },
-                "required": false,
-                "groupName": "windowsServiceOptions",
-                "helpMarkDown": "Windows Service StartUp Type"
-        },
-        {
                 "name": "computerName",
                 "type": "string",
                 "label": "Machines",
@@ -123,10 +74,10 @@
                 "helpMarkDown": "Password for administrator Login on target machines"
         }
     ],
-    "instanceNameFormat": "Create Windows Service",
+    "instanceNameFormat": "Uninstall NServiceBus Application",
     "execution": {
         "PowerShell": {
-          "target": "$(currentDirectory)\\createServiceTask.ps1",
+          "target": "$(currentDirectory)\\uninstallNServiceBus.ps1",
           "argumentFormat": "",
           "workingDirectory": "$(currentDirectory)"
         }

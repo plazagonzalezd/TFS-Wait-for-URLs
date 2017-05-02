@@ -1,4 +1,4 @@
-﻿function Create-Service
+﻿function Install-Service
 {
     param(
         [Parameter(Position=0, Mandatory=$true)]
@@ -16,22 +16,25 @@
         [Parameter(Position=6)]
         [string]$startUp
         )
+
         $service = Get-WmiObject -class Win32_Service -Filter "Name='$servicename'"
-        
+
         if($service -eq $null){ #verify the service doesn't exist
             $NSParams = @{
                 Name = $serviceName
                 BinaryPathName = $binaryPath
             }
-        
             if($username -and $password){
                 $securePassword = ConvertTo-SecureString $password -AsPlainText -Force
                 $creds = New-Object System.Management.Automation.PSCredential ($username, $securePassword)
-                $NSParams.Credential = $credsC
+                $NSParams.Credential = $creds
             }
             if($description){$NSParams.Description = $description}
             if($displayName){$NSParams.DisplayName = $displayName}
-            if($startUp){$NSParams.StartupType = $startUp}    
+            if($startUp){$NSParams.StartupType = $startUp}
+
+            Write-Host "Creating new service with parameters: "
+            $NSParams | Out-String | Write-Host
 
             New-Service @NSParams
         }
